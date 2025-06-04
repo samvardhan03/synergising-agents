@@ -167,7 +167,7 @@ class SimulationAnalysis(BaseModel):
 class InsightPoint(BaseModel):
     title: str
     description: str
-    importance: str = Field(regex="^(high|medium|low)$")
+    importance: str = Field(pattern="^(high|medium|low)$")
     supporting_data: List[str] = Field(default_factory=list)
     action_items: List[str] = Field(default_factory=list)
 
