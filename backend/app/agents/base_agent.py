@@ -82,4 +82,7 @@ class BaseAgent(ABC):
             agent_type=self.agent_type,
             progress_percentage=progress,
             status_message=message,
-            current_step
+            current_step=step
+        )
+        for callback in self.progress_callbacks:
+            callback(progress_update)
